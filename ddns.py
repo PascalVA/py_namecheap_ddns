@@ -6,6 +6,9 @@
 #   - httpbin.org
 #   - ipfy.org
 #   - wtfismyip.com
+# Configure the service setting the following environment variables
+#   DDNS_PASSWORD     The password (api key) of namecheap
+#   DDNS_FULL_DOMAIN  The full domain name of the record you want to update
 
 from __future__ import print_function
 import os
@@ -74,7 +77,6 @@ handler = logging.handlers.SysLogHandler(address = '/dev/log')
 logger.addHandler(handler)
 
 # Config from environment
-ddns_url = os.environ.get('DDNS_URL') 
 ddns_password = os.environ.get('DDNS_PASSWORD')
 ddns_full_domain = os.environ.get('DDNS_FULL_DOMAIN')
 

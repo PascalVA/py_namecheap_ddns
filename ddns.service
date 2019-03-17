@@ -1,0 +1,10 @@
+[Unit]
+After=network.target
+
+[Service]
+User=ddns
+ExecStart=/usr/local/bin/ddns.py
+EnvironmentFile=/etc/ddns/environment
+
+[Install]
+WantedBy=default.target
